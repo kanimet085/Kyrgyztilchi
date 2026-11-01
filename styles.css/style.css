@@ -116,6 +116,32 @@
 .courses__card-link { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: var(--transition); }
 .courses__card-link:hover { color: var(--accent-color); }
 
+/* --- СЕКЦИЯ ТЕСТА --- */
+.synamyk__content { 
+    padding: 80px 0; 
+    background: #ffffff; 
+    text-align: center; 
+}
+.synamyk__title { 
+    font-size: 32px; 
+    margin-bottom: 15px; 
+    color: var(--text-dark, #222); 
+}
+.synamyk__description { 
+    display: inline-block;
+    margin-top: 15px;
+    color: #2b5cb7; 
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease; 
+}
+.synamyk__description:hover {
+    color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* ========= section contacts ============ */
 .contacts { padding: 100px 0; background: #ffffff; text-align: center; }
 .contacts__title { font-size: 32px; margin-bottom: 20px; }
 .contacts__description { color: var(--text-muted); max-width: 500px; margin: 0 auto 40px; }
