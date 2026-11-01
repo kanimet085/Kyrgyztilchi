@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #2b5cb7;
+    --accent-color: #ffc107;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    --bg-light: #f8f9fa;
+    --transition: all 0.3s ease;
+}

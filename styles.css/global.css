@@ -1,10 +1,8 @@
-.container{
+.container {
     width: 100%;
+    max-width: 1600px;
     min-width: 320px;
-    min-width: 1600px;
-    overflow: hidden;
-
     margin: 0 auto;
-    /* padding: 0 5px; */
-
+    padding: 0 15px;
+    box-sizing: border-box;
 }
