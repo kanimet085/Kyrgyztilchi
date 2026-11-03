@@ -9,11 +9,14 @@
 </head>
 <body>
     <main class="test-page">
+        <!-- ==================== -->
         <div class="container">
+
             <div class="synamyk__content">
-                
+
                 <div class="test-header">
                     <h1 class="test-title">ЖРТ кыргыз тили: Сынак тестери</h1>
+                    <div class="test-progress"><span id="current-num">1</span> / <span id="total-num">0</span></div>
                     <a href="index.html" class="back-link">← Башкы бетке кайттуу</a>
                 </div>
 
@@ -22,14 +25,19 @@
                     
                     <div id="test-question" class="test-card__question">Суроо жүктөлүүдө...</div>
                     
-                    <div id="test-options" class="test-card__options">
+                    <div id="test-options" class="test-card__options"></div>
+                    
+                    <!-- Добавили кнопку WhatsApp внутрь блока результатов -->
+                    <div id="test-result" class="test-card__result hidden">
+                        <h2 id="result-score"></h2>
+                        <button id="whatsapp-btn" class="test-card__whatsapp-btn">Жыйынтыкты мугалимге жөнөтүү (WhatsApp)</button>
                     </div>
                     
-                    <div id="test-result" class="test-card__result hidden"></div>
                     <button id="next-btn" class="test-card__next-btn hidden">Кийинки суроо</button>
                 </div>
 
             </div>
+
         </div>
     </main>
 

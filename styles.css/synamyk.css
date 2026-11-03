@@ -13,17 +13,26 @@
     border-bottom: 2px solid #2b5cb7; 
     padding-bottom: 15px; 
 }
+
 .test-title { 
     color: #2b5cb7; 
     font-size: 26px; 
     font-weight: 700; 
 }
+
+.test-progress {
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
 .back-link { 
     color: #666; 
     text-decoration: none; 
     font-weight: 600; 
     transition: color 0.3s ease; 
 }
+
 .back-link:hover { 
     color: #2b5cb7; 
 }
@@ -37,12 +46,35 @@
     box-shadow: 0 4px 25px rgba(0,0,0,0.06);
 }
 
-.test-card__image-box { margin-bottom: 25px; text-align: center; }
-.test-card__img-question { max-width: 100%; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.test-card__question { font-size: 20px; font-weight: 600; margin-bottom: 25px; color: #222; line-height: 1.4; }
-.test-card__options { display: flex; flex-direction: column; gap: 12px; }
+.test-card__image-box { 
+    margin-bottom: 25px; 
+    text-align: center; 
+}
 
+.test-card__img-question { 
+    max-width: 100%; 
+    border-radius: 6px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+.test-card__question { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-bottom: 25px; 
+    color: #222; 
+    line-height: 1.4; 
+}
+
+.test-card__options { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+}
+
+/* Кнопки вариантов ответов */
 .test-card__option-btn {
+    display: block;
+    width: 100%;
     padding: 16px 20px;
     font-size: 16px;
     background: #ffffff;
@@ -51,7 +83,6 @@
     cursor: pointer;
     text-align: left;
     color: #222;
-    
     transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.1s ease;
 }
 
@@ -64,18 +95,29 @@
     transform: scale(0.98);
 }
 
+/* Выбранный учеником ответ */
+.test-card__option-btn.selected {
+    background-color: #e3f2fd;
+    border-color: #2b5cb7;
+    color: #0d47a1;
+    font-weight: 600;
+}
+
+/* Стили подсветки при мгновенной проверке (если понадобятся) */
 .test-card__option-btn--correct { 
     background-color: #d4edda !important; 
     border-color: #c3e6cb !important; 
     color: #155724 !important; 
     font-weight: 600; 
 }
+
 .test-card__option-btn--wrong { 
     background-color: #f8d7da !important; 
     border-color: #f5c6cb !important; 
     color: #721c24 !important; 
 }
 
+/* Кнопки управления */
 .test-card__next-btn {
     margin-top: 30px;
     width: 100%;
@@ -89,13 +131,31 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.test-card__next-btn:hover { background: #1e448a; }
 
-.test-card__report { margin-top: 25px; display: flex; flex-direction: column; gap: 15px; }
-.test-card__report-item { padding: 15px; border-radius: 8px; border-left: 5px solid; }
-.report-correct { background: #e6f4ea; border-color: #34a853; color: #137333; }
-.report-wrong { background: #fce8e6; border-color: #ea4335; color: #c5221f; }
-.test-card__report-item p { margin-bottom: 5px; font-size: 15px; }
-.badge { display: inline-block; padding: 2px 8px; background: rgba(0,0,0,0.08); border-radius: 4px; font-weight: 600; }
-.badge--success { background: #34a853; color: white; }
-.hidden { display: none !important; }
+.test-card__next-btn:hover { 
+    background: #1e448a; 
+}
+
+/* Кнопка WhatsApp */
+.test-card__whatsapp-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.test-card__whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+/* Скрытые элементы */
+.hidden { 
+    display: none !important; 
+}
