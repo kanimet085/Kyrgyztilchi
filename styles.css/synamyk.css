@@ -63,6 +63,7 @@
     margin-bottom: 25px; 
     color: #222; 
     line-height: 1.4; 
+    white-space: pre-line;
 }
 
 .test-card__options { 
@@ -158,4 +159,243 @@
 /* Скрытые элементы */
 .hidden { 
     display: none !important; 
+}
+
+
+/* =====================================================================
+   НОВОЕ: разделы, таймер, навигация по вопросам
+   ===================================================================== */
+
+/* ---------- Экран старта и экран между разделами ---------- */
+.test-start__title,
+.test-break__title {
+    font-size: 22px;
+    color: #2b5cb7;
+    margin-bottom: 18px;
+}
+
+.test-start__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.test-start__list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #f4f7fd;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #222;
+}
+
+.test-start__list li span:last-child {
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.test-start__note {
+    color: #555;
+    line-height: 1.5;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+/* ---------- Панель: раздел + таймер (прилипает при прокрутке) ---------- */
+.test-bar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 10px 0 14px;
+    background: #ffffff;
+    border-bottom: 1px solid #eef0f3;
+}
+
+.test-bar__section {
+    font-weight: 700;
+    font-size: 16px;
+    color: #2b5cb7;
+}
+
+.test-bar__timer {
+    min-width: 96px;
+    padding: 6px 14px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: #222;
+    background: #f4f7fd;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.test-bar__timer--warning {
+    background: #fff4d6;
+    color: #8a5a00;
+}
+
+.test-bar__timer--danger {
+    background: #fde2e2;
+    color: #b3261e;
+}
+
+/* ---------- Текст для чтения ---------- */
+.test-card__passage {
+    margin-bottom: 20px;
+    padding: 16px 18px;
+    background: #f8faff;
+    border-left: 4px solid #2b5cb7;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222;
+    white-space: pre-line;
+}
+
+/* ---------- Кнопки «назад / вперёд» ---------- */
+.test-card__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.test-card__actions .test-card__next-btn {
+    margin-top: 0;
+    flex: 1;
+}
+
+.test-card__prev-btn,
+.test-card__restart-btn {
+    padding: 14px;
+    background: #ffffff;
+    color: #2b5cb7;
+    border: 2px solid #2b5cb7;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.test-card__prev-btn {
+    flex: 1;
+}
+
+.test-card__restart-btn {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.test-card__prev-btn:hover:not(:disabled),
+.test-card__restart-btn:hover {
+    background: #f0f5ff;
+}
+
+.test-card__prev-btn:disabled,
+.test-card__next-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ---------- Сетка номеров вопросов ---------- */
+.test-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.test-nav__btn {
+    height: 40px;
+    background: #ffffff;
+    border: 2px solid #eef0f3;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.test-nav__btn:hover {
+    border-color: #2b5cb7;
+}
+
+.test-nav__btn--answered {
+    background: #e3f2fd;
+    border-color: #9ec1f0;
+    color: #0d47a1;
+}
+
+.test-nav__btn--current {
+    background: #2b5cb7;
+    border-color: #2b5cb7;
+    color: #ffffff;
+}
+
+/* ---------- Завершить раздел ---------- */
+.test-card__finish-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #b3261e;
+    border: 2px solid #f1c3c0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.test-card__finish-btn:hover {
+    background: #fdecec;
+}
+
+/* ---------- Результат ---------- */
+.test-card__result h2 {
+    margin-bottom: 18px;
+    font-size: 24px;
+    color: #2b5cb7;
+}
+
+.test-result__details {
+    margin-bottom: 8px;
+}
+
+.test-result__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    padding: 12px 14px;
+    background: #f4f7fd;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* ---------- Выравнивание и шрифты внутри карточки теста ---------- */
+.test-card {
+    text-align: left;
+}
+
+.test-card button {
+    font-family: inherit;
+}
+
+.test-start__title,
+.test-break__title,
+.test-card__result h2 {
+    text-align: left;
 }

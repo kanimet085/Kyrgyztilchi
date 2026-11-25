@@ -1,0 +1,454 @@
+/* =====================================================================
+   adaptive.css — адаптив под планшеты и телефоны
+   Подключается последним (см. index.css), поэтому переопределяет style.css.
+   Названия классов не менялись, HTML править не нужно.
+   ===================================================================== */
+
+
+/* =====================================================================
+   0. ФОН СЕКЦИЙ НА ВСЮ ШИРИНУ ЭКРАНА (все размеры)
+   ---------------------------------------------------------------------
+   Раньше фон hero лежал на .header__content, который внутри .container
+   (с padding 15px и max-width 1600px). Из-за этого по бокам оставались
+   белые полоски. Переносим фон на .header (он на всю ширину), а контент
+   остаётся ограниченным контейнером.
+   ===================================================================== */
+.header {
+    background:
+        linear-gradient(rgba(43, 92, 183, 0.9), rgba(43, 92, 183, 0.95)),
+        url('../media/images/image.png') center/cover no-repeat;
+    color: #ffffff;
+}
+
+.header__content {
+    background: none;
+}
+
+/* Секция «Өзүңдү текшер» на главной: свой фон на всю ширину,
+   чтобы она не сливалась с белым блоком контактов.
+   Селектор .synamyk .synamyk__content не затрагивает страницу synamyk.html,
+   там .synamyk__content не лежит внутри .synamyk. */
+.synamyk {
+    background: #eaf0fb;
+}
+
+.synamyk .synamyk__content {
+    background: transparent;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =====================================================================
+   1. ПЛАНШЕТЫ И МАЛЕНЬКИЕ НОУТБУКИ  (до 1024px)
+   ===================================================================== */
+@media (max-width: 1024px) {
+    .header__nav-item {
+        gap: 20px;
+    }
+
+    .hero__title {
+        font-size: 40px;
+    }
+
+    .about,
+    .courses {
+        padding: 60px 0;
+    }
+
+    .courses__grid {
+        gap: 30px;
+    }
+}
+
+
+/* =====================================================================
+   2. ПЛАНШЕТ ВЕРТИКАЛЬНО / БОЛЬШОЙ ТЕЛЕФОН  (до 768px)
+   ===================================================================== */
+@media (max-width: 768px) {
+
+    /* ---------- Шапка ---------- */
+    .header__nav {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 14px 0;
+        margin-bottom: 40px;
+    }
+
+    /* Логотип слева, кнопка «Жазылуу» справа — первая строка */
+    .header__logo {
+        order: 1;
+    }
+
+    .header__nav-btn {
+        order: 2;
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
+    /* Меню — вторая строка на всю ширину, листается пальцем вбок */
+    .header__nav-item {
+        order: 3;
+        width: 100%;
+        gap: 22px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .header__nav-item::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav__link {
+        flex-shrink: 0;
+        padding: 6px 0;
+        font-size: 15px;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    /* ---------- Hero ---------- */
+    .header__content {
+        padding-bottom: 50px;
+    }
+
+    .hero__title {
+        font-size: 32px;
+    }
+
+    .hero__description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        display: block;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    /* ---------- Общие отступы секций ---------- */
+    .about,
+    .courses,
+    .synamyk {
+        padding: 50px 0;
+    }
+
+    .about__title,
+    .courses__title,
+    .synamyk__title,
+    .contacts__title {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+
+    .about__title,
+    .courses__title {
+        margin-bottom: 30px;
+    }
+
+    /* ---------- О нас ---------- */
+    .about__grid {
+        gap: 18px;
+    }
+
+    .about__card {
+        padding: 24px 20px;
+    }
+
+    /* ---------- Курсы ---------- */
+    /* minmax(340px) ломал сетку на экранах уже 340px — делаем гибко */
+    .courses__grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 24px;
+    }
+
+    .courses__card-image img {
+        height: 190px;
+    }
+
+    .courses__card-info {
+        padding: 22px;
+    }
+
+    .courses__card-name {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .courses__card-desc {
+        margin-bottom: 18px;
+    }
+
+    .courses__card-link {
+        display: inline-block;
+        padding: 6px 0;
+    }
+
+    /* ---------- Тест (блок на главной) ---------- */
+    .synamyk__btn {
+        margin-top: 10px;
+        padding: 12px 8px;
+    }
+
+    /* ---------- Контакты ---------- */
+    .contacts {
+        padding: 60px 0;
+    }
+
+    .contacts__description {
+        margin-bottom: 30px;
+    }
+
+    .contacts__btn-wa {
+        display: block;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    /* ---------- Футер ---------- */
+    .footer__content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    /* ---------- Страница теста (synamyk.html) ---------- */
+    .test-page {
+        padding: 30px 0;
+    }
+
+    .test-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .test-title {
+        flex: 1 1 100%;
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .test-progress {
+        font-size: 16px;
+    }
+
+    .back-link {
+        font-size: 14px;
+    }
+
+    .test-card {
+        padding: 28px 20px;
+    }
+
+    .test-card__img-question {
+        height: auto;
+    }
+}
+
+
+/* =====================================================================
+   3. ТЕЛЕФОНЫ  (до 480px)
+   ===================================================================== */
+@media (max-width: 480px) {
+
+    .header__nav {
+        margin-bottom: 30px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .hero__title {
+        font-size: 26px;
+        margin-bottom: 14px;
+    }
+
+    .hero__description {
+        font-size: 15px;
+    }
+
+    .about,
+    .courses,
+    .synamyk {
+        padding: 40px 0;
+    }
+
+    .about__title,
+    .courses__title,
+    .synamyk__title,
+    .contacts__title {
+        font-size: 23px;
+    }
+
+    .about__card-icon {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .about__card-title {
+        font-size: 18px;
+    }
+
+    .courses__card-image img {
+        height: 160px;
+    }
+
+    .courses__card-info {
+        padding: 18px;
+    }
+
+    .contacts {
+        padding: 50px 0;
+    }
+
+    .footer {
+        font-size: 13px;
+    }
+
+    /* Тест */
+    .test-title {
+        font-size: 19px;
+    }
+
+    .test-card {
+        padding: 22px 14px;
+        border-radius: 10px;
+    }
+
+    .test-card__question {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .test-card__options {
+        gap: 10px;
+    }
+
+    .test-card__option-btn {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .test-card__next-btn,
+    .test-card__whatsapp-btn {
+        padding: 14px 10px;
+        font-size: 15px;
+    }
+}
+
+
+/* =====================================================================
+   4. ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ  (до 360px)
+   ===================================================================== */
+@media (max-width: 360px) {
+    .hero__title {
+        font-size: 23px;
+    }
+
+    .header__nav-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .nav__link {
+        font-size: 14px;
+    }
+
+    .test-card__option-btn {
+        font-size: 14px;
+    }
+}
+
+/* =====================================================================
+   5. ТЕСТ: новые элементы (разделы, таймер, навигация)
+   ===================================================================== */
+@media (max-width: 768px) {
+    .test-bar {
+        margin-bottom: 18px;
+    }
+
+    .test-bar__timer {
+        font-size: 20px;
+        min-width: 86px;
+    }
+
+    .test-card__passage {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .test-start__title,
+    .test-break__title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .test-bar {
+        gap: 8px;
+    }
+
+    .test-bar__section {
+        font-size: 14px;
+    }
+
+    .test-bar__timer {
+        font-size: 18px;
+        min-width: 78px;
+        padding: 5px 10px;
+    }
+
+    .test-start__list li {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .test-card__actions {
+        gap: 8px;
+    }
+
+    .test-card__prev-btn,
+    .test-card__actions .test-card__next-btn {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+    .test-nav {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+    }
+
+    .test-nav__btn {
+        height: 38px;
+    }
+
+    .test-card__result h2 {
+        font-size: 21px;
+    }
+}
+
+/* Страница теста: убираем лишний верхний отступ на телефонах */
+@media (max-width: 768px) {
+    .test-page .synamyk__content {
+        padding: 0;
+    }
+}

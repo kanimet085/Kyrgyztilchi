@@ -127,19 +127,19 @@
     margin-bottom: 15px; 
     color: var(--text-dark, #222); 
 }
-.synamyk__description { 
+
+.synamyk__btn {
     display: inline-block;
-    margin-top: 15px;
-    color: #2b5cb7; 
-    font-weight: 600;
+    background: #22d8e6;
+    color: #ffffff;
+    padding: 16px 36px;
+    border-radius: 30px;
     text-decoration: none;
+    font-weight: 700;
     font-size: 18px;
-    transition: color 0.3s ease, transform 0.2s ease; 
+    transition: var(--transition);
 }
-.synamyk__description:hover {
-    color: #ffc107;
-    transform: scale(1.05);
-}
+.synamyk__btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(37, 185, 211, 0.3); }
 
 /* ========= section contacts ============ */
 .contacts { padding: 100px 0; background: #ffffff; text-align: center; }

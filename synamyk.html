@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ky">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +9,68 @@
 </head>
 <body>
     <main class="test-page">
-        <!-- ==================== -->
         <div class="container">
 
             <div class="synamyk__content">
 
                 <div class="test-header">
                     <h1 class="test-title">ЖРТ кыргыз тили: Сынак тестери</h1>
-                    <div class="test-progress"><span id="current-num">1</span> / <span id="total-num">0</span></div>
+                    <div class="test-progress hidden"><span id="current-num">1</span> / <span id="total-num">0</span></div>
                     <a href="index.html" class="back-link">← Башкы бетке кайттуу</a>
                 </div>
 
                 <div class="test-card">
-                    <div id="test-image-container" class="test-card__image-box hidden"></div>
-                    
-                    <div id="test-question" class="test-card__question">Суроо жүктөлүүдө...</div>
-                    
-                    <div id="test-options" class="test-card__options"></div>
-                    
-                    <!-- Добавили кнопку WhatsApp внутрь блока результатов -->
+
+                    <!-- 1. Старт: правила и список разделов -->
+                    <div id="test-start" class="test-start">
+                        <h2 class="test-start__title">Тестти баштоодон мурун</h2>
+                        <ul id="test-start-info" class="test-start__list"></ul>
+                        <p class="test-start__note">Ар бир бөлүмдүн өзүнүн убактысы бар. Убакыт бүткөндө же бөлүмдү аяктаганда, мурунку бөлүмгө кайтууга болбойт.</p>
+                        <p class="test-start__note">Бир бөлүмдүн ичинде суроолордун ортосунда эркин жүрүүгө болот. Бетти жаңыласаңыз да убакыт токтобойт.</p>
+                        <button id="start-btn" class="test-card__next-btn" type="button">Тестти баштоо</button>
+                    </div>
+
+                    <!-- 2. Вопросы -->
+                    <div id="test-body" class="hidden">
+                        <div id="test-bar" class="test-bar">
+                            <div id="section-name" class="test-bar__section"></div>
+                            <div id="test-timer" class="test-bar__timer">00:00</div>
+                        </div>
+
+                        <div id="test-image-container" class="test-card__image-box hidden"></div>
+
+                        <div id="test-passage" class="test-card__passage hidden"></div>
+
+                        <div id="test-question" class="test-card__question">Суроо жүктөлүүдө...</div>
+
+                        <div id="test-options" class="test-card__options"></div>
+
+                        <div class="test-card__actions">
+                            <button id="prev-btn" class="test-card__prev-btn" type="button">← Мурунку</button>
+                            <button id="next-btn" class="test-card__next-btn" type="button">Кийинки →</button>
+                        </div>
+
+                        <div id="test-nav" class="test-nav"></div>
+
+                        <button id="finish-section-btn" class="test-card__finish-btn" type="button">Бөлүмдү аяктоо</button>
+                    </div>
+
+                    <!-- 3. Между разделами -->
+                    <div id="test-break" class="test-break hidden">
+                        <h2 id="break-title" class="test-break__title"></h2>
+                        <p id="break-text" class="test-start__note"></p>
+                        <p id="break-next" class="test-start__note"></p>
+                        <button id="break-btn" class="test-card__next-btn" type="button"></button>
+                    </div>
+
+                    <!-- 4. Результат -->
                     <div id="test-result" class="test-card__result hidden">
                         <h2 id="result-score"></h2>
-                        <button id="whatsapp-btn" class="test-card__whatsapp-btn">Жыйынтыкты мугалимге жөнөтүү (WhatsApp)</button>
+                        <div id="result-details" class="test-result__details"></div>
+                        <button id="whatsapp-btn" class="test-card__whatsapp-btn" type="button">Жыйынтыкты мугалимге жөнөтүү (WhatsApp)</button>
+                        <button id="restart-btn" class="test-card__restart-btn" type="button">Кайра баштоо</button>
                     </div>
-                    
-                    <button id="next-btn" class="test-card__next-btn hidden">Кийинки суроо</button>
+
                 </div>
 
             </div>
@@ -41,6 +78,7 @@
         </div>
     </main>
 
+    <script src="./questions.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
